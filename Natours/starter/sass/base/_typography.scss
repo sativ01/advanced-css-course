@@ -28,13 +28,7 @@
   text-transform: uppercase;
   font-weight: 700;
 
-  //gradient color for the whole text
-  display: inline-block; // to limit the length of the background
-  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
-  // to set up the background color
-  -webkit-background-clip: text; // to limit background to the text only
-  background-clip: text;
-  color: transparent; // make text transparent so that gradient could be seen
+  @include text-gradient (#{$color-primary-light},  #{$color-primary-dark});
 
   letter-spacing: 2px;
 

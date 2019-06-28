@@ -12,3 +12,15 @@
 .u-margin-bottom-large{
   margin-bottom: 8rem;
 }
+
+//gradient color for the whole text
+@mixin text-gradient ($color-left, $color-right) {
+  display: inline-block;// to limit the length of the background
+  background-image: linear-gradient( 
+    to right, $color-left, $color-right
+  );
+  // to set up the background color
+  -webkit-background-clip: text;
+  background-clip: text; // to limit background to the text only
+  color: transparent; // make text transparent so that gradient could be seen
+}
