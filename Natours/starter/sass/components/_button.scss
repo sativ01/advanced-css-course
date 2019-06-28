@@ -9,7 +9,7 @@
     border-radius: 10rem; // can be any hight number to make round sides
     transition: all .2s; // animation 2nd way; shorthand it is related to the *transform* property in below rules
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
     &:hover{
@@ -51,4 +51,28 @@
       transition: all .4s;
       background-color: white;
     }
+}
+
+.btn-text{
+  &:link,
+  &:visited{
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid $color-primary;
+    padding: 1rem;
+  }
+
+  &:hover{
+    background-color: $color-primary;
+    color: white;
+    box-shadow: 0 1rem 2rem $color-shadow;
+    transform: translateY(-2px);
+    transition: all .2s;
+  }
+
+  &:active{
+    transform: translateY(0)
+  }
 }
