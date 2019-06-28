@@ -1,0 +1,42 @@
+/* 95% of viewport
+  cover -- to cover all the space in viewport
+  top -- to stay attached to the top if image size changes
+  clip-path -- make a skewed bottom (online tool clippy)
+ */
+ .header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, .8), 
+    rgba($color-primary-dark, .8)),
+  url('../img/hero.jpg');
+  background-size: cover;
+  background-position: top; 
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+  position: relative;
+
+  &__logobox{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  /*
+    box that contains header texts
+    position: absolute // to position it from 0, 0
+    top and left -- to move it to the center in relation to it's container
+    when moved 50% -- it actually moves it's top left corner to this point
+    to move it back -- used transform -- translate because it's related to the object itself not parent
+  */
+  &__text-box{
+    position: absolute;
+    top: 40%; /* was 50% but adjusted for UX */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

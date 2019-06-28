@@ -1,0 +1,54 @@
+/* two conditions because we don't want it to change on visited state*/
+.btn {
+  &:link,
+  &:visited{
+    text-transform: uppercase;
+    text-decoration: none; // remove underline 
+    padding: 1.5rem 4rem; // top & bot = 15, left right = 40
+    display: inline-block; // to add some space to the button (so it's not attached to everything else)
+    border-radius: 10rem; // can be any hight number to make round sides
+    transition: all .2s; // animation 2nd way; shorthand it is related to the *transform* property in below rules
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+    &:hover{
+      color: $color-grey-dark;
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem $color-shadow;
+    
+      &::after{
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+    
+    &:active{
+      transform: translateY(-1px)
+    }
+    
+    &--white{
+      background-color: white;
+      color: $color-grey-dark;
+      animation: moveInBottom .5s ease-out 0.75s;
+      animation-fill-mode: backwards; // to apply 0% animation style in the beginning
+    }
+    
+    /* pseudo element
+      is placed behind the button itself and we need to apply same styles
+      needs content to present and display to be the same as parent position to be absolute
+    */
+    &::after{
+      content: ""; // has to be present
+      display: inherit;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+      background-color: white;
+    }
+}
