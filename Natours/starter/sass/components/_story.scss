@@ -1,0 +1,57 @@
+.story {
+  width: 87%;
+  margin: 10rem auto;
+  box-shadow: 0 3rem 6rem rgba(black, .1);
+  background-color: rgba(white, .6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-top: 6rem;
+  padding-left: 12rem;
+  padding-right: 9rem;
+  margin-bottom: 7rem;
+  font-size: $default-font-size;
+  clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%);
+
+  &__shape{
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-ouside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-4rem); // adds space between circle and the text it's better to do like this than with padding
+    position: relative;
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.2);
+    transition: all .5s;
+    backface-visibility: hidden; // hack to fix unwanted movement on transform
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; // hack to fix unwanted movement on transform
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%)
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);    
+    filter: blur(3px) brightness(80%) grayscale(40%);
+  }
+}

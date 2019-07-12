@@ -13,7 +13,6 @@
   }
 
     &:hover{
-      color: $color-grey-dark;
       transform: translateY(-3px);
       box-shadow: 0 1rem 2rem $color-shadow;
     
@@ -32,8 +31,22 @@
       color: $color-grey-dark;
       animation: moveInBottom .5s ease-out 0.75s;
       animation-fill-mode: backwards; // to apply 0% animation style in the beginning
+      &:hover{
+        color: $color-grey-dark;
+      }
+    }
+
+    &--green{
+      background-color: $color-primary;
+      color: white;
+      animation: moveInBottom .5s ease-out 0.75s;
+      animation-fill-mode: backwards; // to apply 0% animation style in the beginning
+      &:hover{
+        color: white;
+      }
     }
     
+   
     /* pseudo element
       is placed behind the button itself and we need to apply same styles
       needs content to present and display to be the same as parent position to be absolute
@@ -49,7 +62,7 @@
       left: 0;
       z-index: -1;
       transition: all .4s;
-      background-color: white;
+      background-color: inherit;
     }
 }
 

@@ -13,6 +13,10 @@
   margin-bottom: 8rem;
 }
 
+.u-margin-top-large{
+  margin-top: 8rem;
+}
+
 //gradient color for the whole text
 @mixin text-gradient ($color-left, $color-right) {
   display: inline-block;// to limit the length of the background
