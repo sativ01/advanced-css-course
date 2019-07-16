@@ -1,20 +1,32 @@
 .u-center-text{
-  text-align: center;
+  text-align: center !important;
 }
 .u-margin-bottom-small{
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .u-margin-bottom-medium{
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-big{
+  margin-bottom: 4rem !important;
 }
 
 .u-margin-bottom-large{
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 
 .u-margin-top-large{
-  margin-top: 8rem;
+  margin-top: 8rem !important;
+}
+
+.u-centered {
+  text-align: center;
+}
+
+.u-shift-left-small {
+  transform: translateX(-3rem) !important;
 }
 
 //gradient color for the whole text

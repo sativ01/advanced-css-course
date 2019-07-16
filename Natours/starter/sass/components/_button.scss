@@ -1,5 +1,6 @@
 /* two conditions because we don't want it to change on visited state*/
 .btn {
+  &,
   &:link,
   &:visited{
     text-transform: uppercase;
@@ -10,6 +11,10 @@
     transition: all .2s; // animation 2nd way; shorthand it is related to the *transform* property in below rules
     position: relative;
     font-size: $default-font-size;
+
+    // change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
     &:hover{
@@ -22,7 +27,9 @@
       }
     }
     
-    &:active{
+    &:active,
+    &:focus{  // for <button> element
+      outline: none; // for <button> element
       transform: translateY(-1px)
     }
     
